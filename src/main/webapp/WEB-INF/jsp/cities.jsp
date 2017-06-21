@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -18,6 +18,7 @@
         <th>map</th>
         <th>opt</th>
     </tr>
+    <a href="/callmail/approve">跳转发邮件</a>
     <c:forEach items="${cities}" var="city">
         <tr>
             <td>${city.id}</td>

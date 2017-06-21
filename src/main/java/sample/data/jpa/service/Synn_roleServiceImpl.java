@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 
-@Service("Synn_roleService")
+@Service
 @Transactional
 public class Synn_roleServiceImpl implements Synn_roleService {
     private final Synn_roleReposity synn_roleReposity;

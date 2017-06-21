@@ -62,6 +62,7 @@ public class CityController {
     @RequestMapping("all")
     public String findAll(Map<String, Object> model) {
         List<City> cities = this.cityService.findAll();
+
         model.put("cities", cities);
         return "cities";
     }
