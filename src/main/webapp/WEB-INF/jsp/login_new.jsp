@@ -45,6 +45,19 @@
             {
                 $("#login_form").addClass('shake_effect')
             },1);
+        }else{
+            $.ajax({
+                url:'/logincheck',
+                type:'post',
+                data:'merName='+values,
+                async : false, //默认为true 异步
+                error:function(){
+                    alert('error');
+                },
+                success:function(data){
+                    $("#"+divs).html(data);
+                }
+            });
         }
     }
     function check_register(){

@@ -1,25 +1,26 @@
 package sample.data.jpa.domain;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Synn_role {
+@Table(name="synn_role")
+public class Synn_role implements Serializable {
+
   @Id
-  @GeneratedValue
-  private Long role_id;
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int role_id;
 
   @Column
   private String role_name;
 
-  public Long getRole_id() {
+
+  public int getRole_id() {
     return role_id;
   }
 
-  public void setRole_id(Long role_id) {
+  public void setRole_id(int role_id) {
     this.role_id = role_id;
   }
 
