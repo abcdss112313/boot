@@ -2,6 +2,7 @@ package sample.data.jpa.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import sample.data.jpa.dao.SynnapplyDao;
@@ -34,5 +35,11 @@ public class SynnapplyServiceImpl implements SynnapplyService {
     @Override
     public Page<Synnapply> findBookCriteria(Integer page, Integer size, Synnapply synnapply) {
       return null;
+    }
+
+    @Override
+    @Modifying
+    public Synnapply saveOrUpdate(Synnapply synnapply) {
+        return synnapplyDao.save(synnapply);
     }
 }

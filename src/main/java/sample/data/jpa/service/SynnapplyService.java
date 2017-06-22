@@ -17,4 +17,6 @@ public interface SynnapplyService {
     int deleteByApplyid(Integer integer);
 
     Page<Synnapply> findBookCriteria(Integer page, Integer size, Synnapply synnapply);
+
+    Synnapply  saveOrUpdate(Synnapply synnapply);
 }

@@ -8,11 +8,12 @@ public class Synn_users implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private int user_id;
-  @Column
-  private String user_name;
-  @Column
-  private int role_id;
+  @Column(name="user_id")
+  private int userid;
+  @Column(name="user_name")
+  private String username;
+  @Column(name="role_id")
+  private int roleid;
   @Column
   private String passwd;
   @Column
@@ -20,28 +21,28 @@ public class Synn_users implements Serializable {
   @Column
   private String emails;
 
-  public int getUser_id() {
-    return user_id;
+  public int getUserid() {
+    return userid;
   }
 
-  public void setUser_id(int user_id) {
-    this.user_id = user_id;
+  public void setUserid(int userid) {
+    this.userid = userid;
   }
 
-  public String getUser_name() {
-    return user_name;
+  public String getUsername() {
+    return username;
   }
 
-  public void setUser_name(String user_name) {
-    this.user_name = user_name;
+  public void setUsername(String username) {
+    this.username = username;
   }
 
-  public int getRole_id() {
-    return role_id;
+  public int getRoleid() {
+    return roleid;
   }
 
-  public void setRole_id(int role_id) {
-    this.role_id = role_id;
+  public void setRoleid(int roleid) {
+    this.roleid = roleid;
   }
 
   public String getPasswd() {

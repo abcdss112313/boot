@@ -32,7 +32,7 @@ public class LoginController {
     public void checkLogin(Synn_users users, HttpServletResponse rsp,HttpServletRequest request) throws IOException {
         Synn_users user = loginService.findByname(users.getAccount(),users.getPasswd());
         if(user!=null){
-             request.getSession().setAttribute("userid",user.getUser_id());
+             request.getSession().setAttribute("userid",user.getUserid());
              rsp.sendRedirect("/city/all");
         }
     }
