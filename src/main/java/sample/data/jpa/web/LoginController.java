@@ -25,15 +25,16 @@ public class LoginController {
 
     @RequestMapping("/login")
     public String login(){
-        return "login_new";
+        return "login";
     }
 
     @PostMapping("/logincheck")
     public void checkLogin(Synn_users users, HttpServletResponse rsp,HttpServletRequest request) throws IOException {
         Synn_users user = loginService.findByname(users.getAccount(),users.getPasswd());
         if(user!=null){
-             request.getSession().setAttribute("userid",user.getUserid());
-             rsp.sendRedirect("/city/all");
+             int id  = user.getUserid();
+
+             rsp.sendRedirect("/apply/all/"+id);
         }
     }
 
